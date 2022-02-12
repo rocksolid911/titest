@@ -1,5 +1,6 @@
 import 'package:dropdown_formfield/dropdown_formfield.dart';
 import 'package:flutter/material.dart';
+import 'package:titest/Admin/Screens/adminhome.dart';
 
 class BookTicket extends StatefulWidget {
   const BookTicket({Key? key}) : super(key: key);
@@ -79,7 +80,7 @@ class _BookTicketState extends State<BookTicket> {
               child: DropDownFormField(
                 titleText: 'My workout',
                 hintText: 'Please choose one',
-                value: tquantity,
+                value: movie,
                 onSaved: (value) {
                   setState(() {
                     _movie = value;
@@ -134,10 +135,8 @@ class _BookTicketState extends State<BookTicket> {
     _movieresult = _movie;
     });
     }
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
 
-                  );
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminHome()));
 
                 }, child: const Text("book now"),
 
