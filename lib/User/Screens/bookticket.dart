@@ -1,5 +1,6 @@
 import 'package:dropdown_formfield/dropdown_formfield.dart';
 import 'package:flutter/material.dart';
+import 'package:titest/Admin/Screens/adminhome.dart';
 
 class BookTicket extends StatefulWidget {
   const BookTicket({Key? key}) : super(key: key);
@@ -36,6 +37,22 @@ class _BookTicketState extends State<BookTicket> {
           children: [
             TextFormField(
               controller: name,
+              onChanged: (value){
+                value = name.text;
+              },
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+
+              controller: tquantity,
+              onChanged: (value){
+                value = tquantity.text;
+              },
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
@@ -45,6 +62,11 @@ class _BookTicketState extends State<BookTicket> {
             ),
             TextFormField(
               controller: phno,
+              onChanged: (value){
+                setState(() {
+                  value = phno.text;
+                });
+              },
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
@@ -109,6 +131,7 @@ class _BookTicketState extends State<BookTicket> {
                   // If the form is valid, display a snackbar. In the real world,
                   // you'd often call a server or save the information in a database.
                   setState(() {
+<<<<<<< HEAD
                     _movieresult = _movie;
                   });
                 }
@@ -117,6 +140,16 @@ class _BookTicketState extends State<BookTicket> {
                 );
               },
               child: const Text("book now"),
+=======
+    _movieresult = _movie;
+    });
+    }
+
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminHome()));
+
+                }, child: const Text("book now"),
+
+>>>>>>> 20c09e6df9730065597b9ad94647eb647ce2ca67
             ),
           ],
         ),
