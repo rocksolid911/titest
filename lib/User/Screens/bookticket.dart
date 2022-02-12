@@ -80,7 +80,7 @@ class _BookTicketState extends State<BookTicket> {
               child: DropDownFormField(
                 titleText: 'My workout',
                 hintText: 'Please choose one',
-                value: movie,
+                value: _movie,
                 onSaved: (value) {
                   setState(() {
                     _movie = value;
