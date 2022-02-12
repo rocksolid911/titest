@@ -12,7 +12,7 @@ class AdminHome extends StatefulWidget {
 class _AdminHomeState extends State<AdminHome> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
-  TextEditingController phno = TextEditingController();
+  TextEditingController time= TextEditingController();
   TextEditingController tquantity = TextEditingController();
   TextEditingController tprice = TextEditingController();
   late String _movie;
@@ -84,6 +84,23 @@ class _AdminHomeState extends State<AdminHome> {
                  onChanged: (value){
                    setState(() {
                      value = tprice.text;
+                   });
+                 },
+               ),
+               TextFormField(
+                 decoration: InputDecoration(
+                   label: Text('${movielist[index].time}'),
+                 ),
+                 controller: time,
+                 validator: (value) {
+                   if (value == null || value.isEmpty ) {
+                     return 'Please enter some text';
+                   }
+                   return null;
+                 },
+                 onChanged: (value){
+                   setState(() {
+                     value = time.text;
                    });
                  },
                ),
