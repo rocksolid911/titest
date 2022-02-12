@@ -9,12 +9,11 @@ class BookTicket extends StatefulWidget {
 }
 
 class _BookTicketState extends State<BookTicket> {
-
   final _formKey = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
   TextEditingController phno = TextEditingController();
   TextEditingController tquantity = TextEditingController();
-  TextEditingController movie  = TextEditingController();
+  TextEditingController movie = TextEditingController();
   late String _movie;
   late String _movieresult;
 
@@ -28,13 +27,14 @@ class _BookTicketState extends State<BookTicket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Book Ticket'),),
+      appBar: AppBar(
+        title: const Text('Book Ticket'),
+      ),
       body: Form(
         key: _formKey,
         child: Column(
           children: [
             TextFormField(
-
               controller: name,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -44,7 +44,6 @@ class _BookTicketState extends State<BookTicket> {
               },
             ),
             TextFormField(
-
               controller: phno,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -110,20 +109,17 @@ class _BookTicketState extends State<BookTicket> {
                   // If the form is valid, display a snackbar. In the real world,
                   // you'd often call a server or save the information in a database.
                   setState(() {
-    _movieresult = _movie;
-    });
-    }
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
-
-                  );
-
-                }, child: const Text("book now"),
-
+                    _movieresult = _movie;
+                  });
+                }
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Processing Data')),
+                );
+              },
+              child: const Text("book now"),
             ),
           ],
         ),
-
       ),
     );
   }

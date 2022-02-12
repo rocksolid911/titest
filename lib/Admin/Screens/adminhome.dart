@@ -12,7 +12,7 @@ class AdminHome extends StatefulWidget {
 class _AdminHomeState extends State<AdminHome> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
-  TextEditingController time= TextEditingController();
+  TextEditingController time = TextEditingController();
   TextEditingController tquantity = TextEditingController();
   TextEditingController tprice = TextEditingController();
   late String _movie;
@@ -30,84 +30,83 @@ class _AdminHomeState extends State<AdminHome> {
         title: Text('Admin Home'),
       ),
       body: Form(
-        key: _formKey,
-        child:ListView.builder(
-          itemCount: movielist.length,
-            itemBuilder: (context,index){
-           return Column(
-             children: [
-               TextFormField(
-                 decoration: InputDecoration(
-                   label: Text('${movielist[index].moviename}'),
-                 ),
-                 controller: name,
-                 validator: (value) {
-                   if (value == null || value.isEmpty) {
-                     return 'Please enter some text';
-                   }
-                   return null;
-                 },
-                 onChanged: (value){
-                   setState(() {
-                     value = name.text;
-                   });
-                 },
-               ),
-               TextFormField(
-                 decoration: InputDecoration(
-                   label: Text('${movielist[index].tquant}'),
-                 ),
-                 controller: tquantity,
-                 validator: (value) {
-                   if (value == null || value.isEmpty ) {
-                     return 'Please enter some text';
-                   }
-                   return null;
-                 },
-                 onChanged: (value){
-                   setState(() {
-                     value = tquantity.text;
-                   });
-                 },
-               ),
-               TextFormField(
-                 decoration: InputDecoration(
-                   label: Text('${movielist[index].tprice}'),
-                 ),
-                 controller: tprice,
-                 validator: (value) {
-                   if (value == null || value.isEmpty ) {
-                     return 'Please enter some text';
-                   }
-                   return null;
-                 },
-                 onChanged: (value){
-                   setState(() {
-                     value = tprice.text;
-                   });
-                 },
-               ),
-               TextFormField(
-                 decoration: InputDecoration(
-                   label: Text('${movielist[index].time}'),
-                 ),
-                 controller: time,
-                 validator: (value) {
-                   if (value == null || value.isEmpty ) {
-                     return 'Please enter some text';
-                   }
-                   return null;
-                 },
-                 onChanged: (value){
-                   setState(() {
-                     value = time.text;
-                   });
-                 },
-               ),
-             ],
-           );
-        })
-      ),
+          key: _formKey,
+          child: ListView.builder(
+              itemCount: movielist.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                        label: Text('${movielist[index].moviename}'),
+                      ),
+                      controller: name,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        setState(() {
+                          value = name.text;
+                        });
+                      },
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        label: Text('${movielist[index].tquant}'),
+                      ),
+                      controller: tquantity,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        setState(() {
+                          value = tquantity.text;
+                        });
+                      },
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        label: Text('${movielist[index].tprice}'),
+                      ),
+                      controller: tprice,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        setState(() {
+                          value = tprice.text;
+                        });
+                      },
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        label: Text('${movielist[index].time}'),
+                      ),
+                      controller: time,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        setState(() {
+                          value = time.text;
+                        });
+                      },
+                    ),
+                  ],
+                );
+              })),
     );
   }
 }
