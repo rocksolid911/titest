@@ -36,6 +36,22 @@ class _BookTicketState extends State<BookTicket> {
             TextFormField(
 
               controller: name,
+              onChanged: (value){
+                value = name.text;
+              },
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+
+              controller: tquantity,
+              onChanged: (value){
+                value = tquantity.text;
+              },
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
@@ -46,6 +62,11 @@ class _BookTicketState extends State<BookTicket> {
             TextFormField(
 
               controller: phno,
+              onChanged: (value){
+                setState(() {
+                  value = phno.text;
+                });
+              },
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
@@ -58,7 +79,7 @@ class _BookTicketState extends State<BookTicket> {
               child: DropDownFormField(
                 titleText: 'My workout',
                 hintText: 'Please choose one',
-                value: _movie,
+                value: tquantity,
                 onSaved: (value) {
                   setState(() {
                     _movie = value;
