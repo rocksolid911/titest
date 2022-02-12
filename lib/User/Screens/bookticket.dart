@@ -15,14 +15,14 @@ class _BookTicketState extends State<BookTicket> {
   TextEditingController phno = TextEditingController();
   TextEditingController tquantity = TextEditingController();
   TextEditingController movie  = TextEditingController();
-  late String _myActivity;
-  late String _myActivityResult;
+  late String _movie;
+  late String _movieresult;
 
   @override
   void initState() {
     super.initState();
-    _myActivity = '';
-    _myActivityResult = '';
+    _movie = '';
+    _movieresult = '';
   }
 
   @override
@@ -58,15 +58,15 @@ class _BookTicketState extends State<BookTicket> {
               child: DropDownFormField(
                 titleText: 'My workout',
                 hintText: 'Please choose one',
-                value: _myActivity,
+                value: _movie,
                 onSaved: (value) {
                   setState(() {
-                    _myActivity = value;
+                    _movie = value;
                   });
                 },
                 onChanged: (value) {
                   setState(() {
-                    _myActivity = value;
+                    _movie = value;
                   });
                 },
                 dataSource: [
@@ -110,7 +110,7 @@ class _BookTicketState extends State<BookTicket> {
                   // If the form is valid, display a snackbar. In the real world,
                   // you'd often call a server or save the information in a database.
                   setState(() {
-    _myActivityResult = _myActivity;
+    _movieresult = _movie;
     });
     }
                   ScaffoldMessenger.of(context).showSnackBar(
